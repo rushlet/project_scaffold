@@ -1,7 +1,7 @@
 {
-  "name": "politinder",
+  "name": "project_scaffold",
   "version": "1.0.0",
-  "description": "",
+  "description": "Set up environment for project development, including gulp and webpack",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -10,7 +10,7 @@
     "type": "git",
     "url": "git+https://github.com/EdwardLuke7/politinder.git"
   },
-  "author": "",
+  "author": "Becky and Luke",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/EdwardLuke7/politinder/issues"
