@@ -1,0 +1,12 @@
+@import './components/title.scss';
+
+* {
+    box-sizing: border-box;
+}
+
+.container {
+    max-width: 500px;
+    display: block;
+    margin: auto;
+    background: rebeccapurple;
+}
