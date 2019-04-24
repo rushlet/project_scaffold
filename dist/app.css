@@ -1,16 +1,16 @@
 .title {
-    text-align: center;
-    display: block;
-    margin: auto;
-    padding-top: 3em;
-}
+  text-align: center;
+  display: block;
+  margin: auto;
+  padding-top: 3em;
+  color: #fff; }
+
 * {
-    box-sizing: border-box;
-}
+  box-sizing: border-box; }
 
 .container {
-    max-width: 500px;
-    display: block;
-    margin: auto;
-    background: rebeccapurple;
-}
+  max-width: 500px;
+  display: block;
+  margin: auto;
+  background: rebeccapurple; }
+

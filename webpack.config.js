@@ -44,12 +44,12 @@ module.exports = {
                 }]
             },
             {
-                test: /\.(scss|css)$/,
-                use: [{
-                    loader: MiniCssExtractPlugin.loader,
-                },
-                    'css-loader',
-                ],
+                test: /\.s?css$/,
+                use: [
+                    MiniCssExtractPlugin.loader,
+                    "css-loader",
+                    "sass-loader"
+                ]
             },
             {
                 test: /\.(jpe?g|png|gif|woff|woff2|eot|ttf|svg)(\?[a-z0-9=.]+)?$/,
