@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "Set up environment for project development - including webpack, sass and hbs",
   "main": "./src/index.js",
+  "env": "test",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "webpack",
@@ -24,6 +25,7 @@
     "babel-preset-env": "^1.7.0",
     "babel-preset-es2015": "^6.24.1",
     "css-loader": "^2.1.1",
+    "extract-text-webpack-plugin": "^4.0.0-beta.0",
     "handlebars": "^4.1.2",
     "html-webpack-plugin": "^3.2.0",
     "mini-css-extract-plugin": "^0.6.0",

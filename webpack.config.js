@@ -1,10 +1,16 @@
 console.log('I am webpack.');
 const path = require('path');
-const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const debug = process.env.NODE_ENV !== "production";
 
 module.exports = {
-	entry: "./src/app.js",
+	entry: {
+	    app: [
+	        './src/app.js',
+	        './src/app.scss'
+	    ],
+	},
 	output: {
 		path: path.resolve(__dirname, 'dist'),
 		filename: "bundle.js"
@@ -29,29 +35,28 @@ module.exports = {
                 use: [{
                     loader: 'handlebars-loader',
                     options: {
-                        helperDirs: path.resolve(__dirname, 'src/components'),
+                        helperDirs: [path.resolve(__dirname, 'src/components'), path.resolve(__dirname, 'src')],
                     }
                 }]
             },
             {
-                test: /\.scss$/,
-                use: [
-                    "style-loader", // creates style nodes from JS strings
-                    "css-loader", // translates CSS into CommonJS
-                    "sass-loader" // compiles Sass to CSS, using Node Sass by default
-                ]
+                test: /\.(scss|css)$/,
+                use: [{
+                        loader: MiniCssExtractPlugin.loader,
+                    },
+                    'css-loader',
+                ],
             }
        ],
     },
     plugins: [
         new HtmlWebpackPlugin({
-            template: 'src/app.hbs',
+            template: path.resolve(__dirname, 'index.hbs'),
+            title: 'Webpack project set up', // needs updating with each project!
         }),
         new MiniCssExtractPlugin({
-            // Options similar to the same options in webpackOptions.output
-            // both options are optional
-            filename: "[name].css",
-            chunkFilename: "[id].css"
-        })
+            filename: '[name].css',
+            chunkFilename: '[id].css',
+        }),
     ]
 };

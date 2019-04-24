@@ -1,0 +1,16 @@
+.title {
+    text-align: center;
+    display: block;
+    margin: auto;
+    padding-top: 3em;
+}
+* {
+    box-sizing: border-box;
+}
+
+.container {
+    max-width: 500px;
+    display: block;
+    margin: auto;
+    background: rebeccapurple;
+}
